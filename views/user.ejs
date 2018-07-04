@@ -1,0 +1,53 @@
+<% include partials/head.ejs %>
+<% include partials/header.ejs %>
+<main role="main">
+	<section>
+		<h1><%= title ? title : user.username %>'s Profile</h1>
+		<form>
+			<input type="hidden" name="id" value="<%= user.id %>">
+			<div class="inputGroup">
+				<label for="user__username">Username</label>
+				<input type="text" name="username" id="user__username" value="<%= user.username %>" disabled>
+			</div>
+			<div class="inputGroup">
+				<label for="user__firstname">First name</label>
+				<input type="text" name="firstname" id="user__firstname" value="<%= user.firstname %>">
+			</div>
+			<div class="inputGroup">
+				<label for="user__lastname">Last name</label>
+				<input type="text" name="lastname" id="user__lastname" value="<%= user.lastname %>">
+			</div>
+			<div class="inputGroup">
+				<label for="user__streetname">Street name</label>
+				<input type="text" name="streetname" id="user__streetname" value="<%= user.streetname %>">
+			</div>
+			<div class="inputGroup">
+				<label for="user__streetnumber">Street number</label>
+				<input type="text" name="streetnumber" id="user__streetnumber" value="<%= user.streetnumber %>">
+			</div>
+			<div class="inputGroup">
+				<label for="user__zipcode">Zip-code</label>
+				<input type="text" name="zipcode" id="user__zipcode" value="<%= user.zipcode %>">
+			</div>
+			<div class="inputGroup">
+				<label for="user__city">City</label>
+				<input type="text" name="city" id="user__city" value="<%= user.city %>">
+			</div>
+			<div class="inputGroup">
+				<fieldset>
+					<legend>Active</legend>
+					<label for="user__activeTrue">Yes</label>
+					<input type="radio" name="active" id="user__activeTrue" value="1" <%= user.active ? 'checked' : ''%>>
+					<label for="user__activeFalse">No</label>
+					<input type="radio" name="active" id="user__activeFalse" value="0" <%= !user.active ? 'checked' : ''%>>
+				</fieldset>
+			</div>
+			<div class="inputGroup">
+				<button type="submit">Save</button>
+			</div>
+		</form>
+		<script src="/scripts/editUser.js"></script>
+	</section>
+</main>
+<% include partials/footer.ejs %>
+<% include partials/after-footer.ejs %>

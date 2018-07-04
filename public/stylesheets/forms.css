@@ -1,0 +1,47 @@
+form .inputGroup:not(:last-of-type) {
+	margin-bottom: 1em;
+}
+
+.inputGroup {
+	display: flex;
+}
+
+.inputGroup label {
+	display: block;
+	min-width: 7em;
+	text-align: right;
+	padding-right: 1em;
+}
+
+.inputGroup input, button {
+	font: inherit;
+}
+
+.inputGroup button {
+	display: block;
+}
+
+span#statusBox {
+	display: block;
+	box-sizing: border-box;
+	padding: .4em 1em;
+	border-radius: 3px;
+}
+
+span.success {
+	background-color: green;
+	color: white;
+}
+
+span.danger {
+	background-color: darkred;
+	color: white;
+}
+
+fieldset {
+	display: flex;
+}
+
+.inputGroup fieldset label {
+	min-width: 3em;
+}

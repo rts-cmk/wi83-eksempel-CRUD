@@ -7,5 +7,82 @@
 	<meta name="description" content="En basal kodebase til nodejs/express projekter">
 	<title><%= title %></title>
 	<link rel="manifest" href="/manifest.webmanifest">
+	<style>
+		@font-face {
+			font-family: 'Noto Serif';
+			font-style: normal;
+			font-weight: 400;
+			font-display: swap;
+			src: url('/fonts/NotoSerif-Regular.ttf') format('truetype');
+		}
+		@font-face {
+			font-family: 'Noto Serif';
+			font-style: italic;
+			font-weight: 400;
+			font-display: swap;
+			src: url('/fonts/NotoSerif-Italic.ttf') format('truetype');
+		}
+		@font-face {
+			font-family: 'Noto Serif';
+			font-style: normal;
+			font-weight: 700;
+			font-display: swap;
+			src: url('/fonts/NotoSerif-Bold.ttf') format('truetype');
+		}
+		@font-face {
+			font-family: 'Noto Serif';
+			font-style: italic;
+			font-weight: 700;
+			font-display: swap;
+			src: url('/fonts/NotoSerif-BoldItalic.ttf') format('truetype');
+		}
+		@font-face {
+			font-family: 'Raleway';
+			font-style: normal;
+			font-weight: 700;
+			font-display: swap;
+			src: url('/fonts/Raleway-Bold.ttf') format('truetype');
+		}
+
+		:root {
+			--fontSize: calc(1em + (21 - 16) * (100vw - 412px) / (1920 - 412));
+			--fontFacePrimary: 'Noto Serif';
+			--fontFaceSecondary: 'Raleway';
+
+			--colorPrimaryForeground: hsl(0, 0%, 7%);
+			--colorPrimaryBackground: hsl(0, 0%, 97%);
+		}
+
+		body {
+			font-family: var(--fontFacePrimary);
+			font-display: swap;
+			font-size: var(--fontSize);
+			color: var(--colorPrimaryForeground);
+			background-color: var(--colorPrimaryBackground);
+		}
+
+		main {
+			min-height: calc(100vh - 8em);
+		}
+
+		h1, h2, h3, h4, h5, h6 {
+			font-family: var(--fontFaceSecondary);
+			font-display: swap;
+		}
+		.siteHeader {
+			display: flex;
+			justify-content: space-between;
+		}
+
+		.primaryNavigation ul {
+			display: flex;
+			list-style: none;
+			margin: 0;
+		}
+
+		.primaryNavigation li:not(:last-of-type) {
+			margin-right: 2em;
+		}
+	</style>
 </head>
 <body>

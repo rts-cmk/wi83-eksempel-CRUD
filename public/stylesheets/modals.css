@@ -1,0 +1,22 @@
+.overlay {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: hsl(0, 0%, 0%, 0.75);
+}
+
+.confirmBox {
+	position: absolute;
+	height: 30vh;
+	width: 30vw;
+	border: 2px solid black;
+	border-radius: 7px;
+	top: 40%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: white;
+	padding: 1em;
+	box-sizing: border-box;
+}

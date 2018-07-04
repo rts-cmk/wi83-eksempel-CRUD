@@ -1,0 +1,39 @@
+table {
+	border-collapse: collapse;
+}
+
+thead tr {
+	background-color: var(--colorPrimaryForeground);
+	color: var(--colorPrimaryBackground);
+}
+
+th {
+	text-align: left;
+}
+
+tbody tr:nth-of-type(odd) {
+	background-color: lightgrey;
+}
+
+th, td {
+	padding: .5em;
+}
+
+tr td:last-of-type {
+	text-align: right;
+}
+
+.responsiveTable {
+	width: 100%;
+	overflow-x: scroll;
+}
+
+@media screen and (min-width: 64em) {
+	table {
+		width: 100%;
+	}
+
+	.responsiveTable {
+		overflow: hidden;
+	}
+}

@@ -1,0 +1,39 @@
+<% include partials/head.ejs %>
+<% include partials/header.ejs %>
+<main role="main">
+	<section>
+		<h1><%= title %></h1>
+		<% if (users.length < 1) { %>
+		<p>There are no users in the database. Would you like to <a href="/create-user">create one now</a>?</p>
+		<% } else { %>
+		<p><a href="/create-user">Create a user</a></p>
+		<div class="responsiveTable">
+			<table>
+				<thead>
+					<tr>
+						<th>ID</th>
+						<th>Username</th>
+						<th>Created on</th>
+						<th>Active</th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody>
+					<% users.forEach(user => { %>
+					<tr>
+						<td><%= user.id %></td>
+						<td><a href="/user/<%= user.id %>"><%= user.username %></a></td>
+						<td><%= `${user.created.getFullYear()}-${user.created.getMonth()+1}-${user.created.getDate()} ${user.created.getHours()}:${user.created.getMinutes()}:${user.created.getSeconds()}` %></td>
+						<td><%= user.active ? 'Yes' : 'No' %></td>
+						<td><a href="/user/<%= user.id %>" class="user__delete" data-id="<%= user.id %>">Delete</a></td>
+					</tr>
+					<% }); %>
+				</tbody>
+			</table>
+			<script src="/scripts/deleteUser.js"></script>
+		</div>
+		<% } %>
+	</section>
+</main>
+<% include partials/footer.ejs %>
+<% include partials/after-footer.ejs %>
